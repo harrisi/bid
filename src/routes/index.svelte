@@ -1,1 +1,22 @@
 <p>please help me bid</p>
+
+<script>
+import { onMount } from 'svelte'
+
+onMount(() => {
+  window.addEventListener("message", (event) => {
+    // Do we trust the sender of this message?
+    if (event.origin !== "https://pleasehelpme.games")
+      return;
+
+    console.log({ event })
+
+    // Assuming you've verified the origin of the received message (which
+    // you must do in any case), a convenient idiom for replying to a
+    // message is to call postMessage on event.source and provide
+    // event.origin as the targetOrigin.
+    event.source.postMessage('neato',
+                             event.origin);
+  }, false);
+})
+</script>
