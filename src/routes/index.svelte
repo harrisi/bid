@@ -2,11 +2,14 @@
 
 <script>
 import { onMount } from 'svelte'
+import { dev } from '$app/env'
+
+let url = dev ? 'http://localhost:3000' : 'https://pleasehelpme.games'
 
 onMount(() => {
   window.addEventListener("message", (event) => {
     // Do we trust the sender of this message?
-    if (event.origin !== "https://pleasehelpme.games")
+    if (event.origin !== url)
       return;
 
     console.log({ event })
