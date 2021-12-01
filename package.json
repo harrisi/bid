@@ -12,7 +12,7 @@
     "prepare": "husky install"
   },
   "devDependencies": {
-    "@sveltejs/adapter-static": "^1.0.0-next.21",
+    "@sveltejs/adapter-cloudflare": "^1.0.0-next.2",
     "@sveltejs/kit": "next",
     "@typescript-eslint/eslint-plugin": "^5.5.0",
     "@typescript-eslint/parser": "^5.5.0",
@@ -33,8 +33,5 @@
   "lint-staged": {
     "*.js": "eslint --cache --fix",
     "*.{js,css,md}": "prettier --write"
-  },
-  "engines": {
-    "node": ">=14.13"
   }
 }
